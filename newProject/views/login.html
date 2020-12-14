@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="newApp">
+<head>
+  <title>Spatlho App</title>
+  <link href="..\content\css\styles.css" rel="stylesheet" type="text/css" />
+   <script src="..\app\lib\angular.min.js"></script>
+   <script src="..\app\app.js"></script>
+</head>
+<br>
+
+<ng-include src="'views\header.html'"></ng-include>
+<ng-include src="'views\Order.html'"></ng-include>
+
+<div class="content">
+ <form name="myForm" >
+    <div class="reg">
+       <h3>Login Page</h3>
+    </div>
+
+<div ng-controller="loginController">
+<br>
+<h2> Login to place an order</h2>
+  <label>
+    Email:
+      <input type="email" name="email" ng-model="user.email" required>
+      <div ng-show="myForm.username.$touched && myForm.username.$invalid">
+        <small style="color:red; display:block; text-align:left;">
+          Enter a valid name</small>
+      </div>
+  </label>
+  <br><br>
+
+  <label>
+    Password:
+      <input type="password" name="password" ng-model="user.password" required>
+  </label>
+  <br><br>
+
+   <button type="submit" class="btn btn-primary" name="reg_user"> User Login</button>
+   <button type="submit" class="btn btn-primary" name="reg_admin">Admin Login</button>
+ </form>
+
+
+    </div>
+   </div>
+  </html>
